@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Khito</title>
+    <script src="{{ asset('assets/js/menu.js')}}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex flex-col min-h-screen">
-
-<!-- HEADER -->
-  <header class="w-full">
-    <div class="flex flex-wrap md:flex-nowrap justify-between bg-gradient-to-r from-orange-400 to-stone-400 px-4 py-1"> 
-        <div class="flex flex-none">
-            <img class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain"></img>
-        </div>
-        <div class="flex flex-wrap mt-3  flex-1 justify-center gap-4 text-sm md:text-base">
-            <p>Home</p>
-            <p>Productos</p>
-        </div>
-        <div class="flex flex-wrap mt-3 justify-end gap-4 text-sm md:text-base">
-            <p>Carrito</p>
-            <p>Inicia Sesión</p>
-            <p>Registrarte</p>
-        </div>
+<body>
+<nav class="bg-neutral-300 py-1.5 relative px-0">
+  <div class="flex px-3 lg:px-2 justify-center">
+    <div class="flex flex-grow items-center">
+      <img 
+        class="w-14" 
+        src="{{ asset('assets/images/logo.webp') }}" 
+        alt="Logo"
+      >
     </div>
-  </header>
+
+    <div class="flex py-3 lg:hidden">
+      <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+    </div>
+
+    
+    <div id="menu" class="lg:flex hidden flex-grow justify-center absolute lg:relative top-15 left-0 lg:top-0 bg-neutral-300 w-full lg:w-auto py-2 px-8 items-center">
+      <div class="flex flex-col grow-7 lg:flex-row mb-4 lg:mb-0 sm:items-center">
+        <a class="lg:mr-7 mb-4 lg:mb-0 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out" href="">Home</a>
+        <a class="lg:mr-7 mb-4 lg:mb-0 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out" href="">Productos</a>
+        <a class="lg:mr-7 mb-4 lg:mb-0 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out" href="">Acerca de nosotros</a>
+      </div>
+      <div class="flex flex-col grow-3 lg:flex-row text-center">
+        <a class="py-2.5 px-3 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out md:mr-2 lg:mr-2 mb-3 lg:mb-0" href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="py-2.5 px-3 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out md:mr-2 lg:mr-2 mb-3 lg:mb-0" href="">Iniciar sesión</a>
+        <a class="py-2.5 text-base border-b border-transparent hover:border-b hover:border-black transition-all duration-100 ease-in-out md:mr-2 lg:mr-0 mb-3 lg:mb-0" href="">Cerrar sesión</a>
+      </div>      
+    </div>
+  </div>
+
+</nav>
 
   <!-- CONTENIDO -->
-  <main class="flex-grow px-4 py-8">
+  <main>
     PROBANDO RAMAS DE GIT
   </main>
 
   <!-- FOOTER -->
-  <footer class="min-w-screen">
-    <div class="bg-black text-center py-4">
+  <footer>
+    <!-- <div class="bg-black text-center py-4">
         <small class="text-white">&copy; Todos los derechos reservados @</small>
-    </div>
+    </div> -->
   </footer>
 </body>
 </html>
